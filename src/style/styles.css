@@ -1,0 +1,162 @@
+@import url(./reset.css); 
+@import url(./variables.css);
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-color);
+  stroke: var(--text-color);
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+}
+
+#container {
+  width: 360px;
+
+  margin: 56px auto;
+}
+
+#profile {
+  padding: 24px;
+}
+
+.image-profile {
+  width: 112px;
+  margin-bottom: 8px;
+}
+
+#switch-theme {
+  height: 24px;
+  width: 64px;
+
+  margin: auto;
+
+  background-color: var(--bg-button);
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+#switch-theme input[type="checkbox"] {
+  all: unset;
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 10;
+}
+
+.icon-theme {
+  height: 32px;
+  width: 32px;
+
+  padding: 8px;
+
+  position: absolute;
+
+  background-color: #fff;
+
+  border-radius: 50%;
+  transition: box-shadow .4s ease-in-out;
+}
+
+#switch-theme:hover .icon-theme {
+  box-shadow: 0 0 0 8px var(--bg-button);
+}
+
+#switch-theme input[type="checkbox"]:not(input:is(input:checked))+.icon-theme {
+  content: url(./../assets/MoonStars.svg);
+  left: -1px;
+}
+
+#switch-theme input[type="checkbox"]:is(input:checked)+.icon-theme {
+  content: url(./../assets/Sun.svg);
+  right: -1px;
+}
+
+#links {
+  gap: 16px;
+}
+
+#links li {
+  height: 56px;
+  width: 312px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  background-color: var(--bg-button);
+  border: 1px solid var(--color-border);
+
+  border-radius: 8px;
+
+  transition: background .4s ease-in-out;
+  cursor: pointer;
+}
+
+#links li:hover {
+  border: 1.5px solid var(--text-color);
+  background-color: var(--bg-button-hover);
+}
+
+#network {
+  flex-direction: row;
+  justify-content: center;
+
+  gap: 16px;
+}
+
+#network li a {
+  height: 40px;
+  width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all .4s ease-in-out;
+  border-radius: 50px;
+}
+
+#network ion-icon {
+  font-size: 24px;
+}
+
+#network a:hover {
+  box-shadow: 0 0 0 4px var(--bg-button);
+  background-color: var(--bg-button);
+}
+
+#footer {
+  text-align: center;
+  font-size: 14px;
+}
+
+#footer ion-icon {
+  margin-bottom: -3px;
+  color: var(--text-color);
+}
+
+#footer a {
+  text-decoration: underline;
+}

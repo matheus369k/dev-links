@@ -1,0 +1,27 @@
+:root {
+  --text-color: #fff;
+  --color-border: rgba(255 255, 255, 0.5);
+  --color-border-hover: rgba(255 255, 255, 0.05);
+  --bg-button: rgba(255 255, 255, 0.1);
+  --bg-button-hover: rgba(255 255, 255, 0.02);
+  --bg-url: url(./../assets/bg-mobile.jpg);
+}
+
+.light:root {
+  --text-color: #000;
+  --color-border: rgba(0 0, 0, 0.5);
+  --color-border-hover: rgba(0 0, 0, 0.05);
+  --bg-button: rgba(0 0, 0, 0.1);
+  --bg-button-hover: rgba(0 0, 0, 0.02);
+  --bg-url: url(./../assets/bg-mobile-light.jpg);
+}
+
+@media (min-width: 769px) {
+  :root {
+    --bg-url: url(./../assets/bg-desktop.jpg);
+  }
+  
+  .light:root {
+    --bg-url: url(./../assets/bg-desktop-light.jpg);
+  }
+}
