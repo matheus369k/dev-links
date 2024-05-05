@@ -1,8 +1,9 @@
-@import url(./reset.css); 
+@import url(./reset.css);
 @import url(./variables.css);
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  min-height: 100vh;
 }
 
 body * {
@@ -13,21 +14,23 @@ body * {
   stroke: var(--text-color);
 }
 
-.flex-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px 0;
-}
-
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
 
   margin: 56px auto;
+  padding: 0 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
 }
 
 #profile {
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .image-profile {
@@ -39,7 +42,7 @@ body * {
   height: 24px;
   width: 64px;
 
-  margin: auto;
+  margin: 8px auto;
 
   background-color: var(--bg-button);
   border: 1px solid var(--color-border);
@@ -82,21 +85,22 @@ body * {
 
 #switch-theme input[type="checkbox"]:not(input:is(input:checked))+.icon-theme {
   content: url(./../assets/MoonStars.svg);
-  left: -1px;
+  animation: slide-in .2s forwards;
 }
 
 #switch-theme input[type="checkbox"]:is(input:checked)+.icon-theme {
   content: url(./../assets/Sun.svg);
-  right: -1px;
+  animation: slide-out .2s forwards;
 }
 
 #links {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
 #links li {
   height: 56px;
-  width: 312px;
 
   display: flex;
   justify-content: center;
@@ -120,6 +124,7 @@ body * {
 }
 
 #network {
+  display: flex;
   flex-direction: row;
   justify-content: center;
 
@@ -159,4 +164,24 @@ body * {
 
 #footer a {
   text-decoration: underline;
+}
+
+@keyframes slide-in {
+  from {
+    left: -2px;
+  }
+
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+
+  to {
+    left: -2px;
+  }
 }
